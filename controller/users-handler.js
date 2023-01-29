@@ -45,13 +45,7 @@ const create = (req, res) => {
 
 //handler method get pada url users
 const readAll = (req, res, next) => {
-    fs.readFileSync(res.render('pages/users/index', {users}), (err, data) => {
-        if (err) {
-            next(err)
-        }else{
-            res.send(data)
-        }
-    })
+    res.render('pages/users/index', {users})
 //res.render('pages/users/index', {users})
 };
 
