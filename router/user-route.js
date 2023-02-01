@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { 
+const {
+  register,
   create,
   readAll, 
   readById, 
   updateById, 
   deleteById 
   } = require('../controller/users-handler.js');
+  
+//register page
+router.route('/users/register')
+  .get(register)
+  .post(create);
 
 //route group
 router.route('/users')

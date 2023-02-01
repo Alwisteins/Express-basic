@@ -3,3 +3,19 @@ body {
   margin: 15%;
   background-color: #ededed
 }
+h1{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+input[type="text"]{
+  text-align: center;
+  padding: 12px 20px;
+  margin-top: 5%;
+  margin-right: 18%;
+  margin-bottom: 3%;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 4px;
+}

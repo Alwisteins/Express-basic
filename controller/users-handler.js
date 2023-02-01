@@ -1,36 +1,23 @@
 const { users } = require('../model/users.js');
 const fs = require('fs');
+const nanoid = require('nanoid');
+
+//handler halaman register
+const register = (req, res) => {
+    res.render('pages/users/register')
+}
 
 //handler method post pada url users
 const create = (req, res) => {
-   const { id, name, email} = req.body;
+   const id = users.length +1;
+   const name = req.body.name;
+   const email = req.body.email;
 
-   if(id == undefined){
-    res.json({
-      status: false,
-      message: 'Id tidak boleh kosong'
-    })
-    res.sendStatus(400)
-   }
-
-   if(name == undefined){
-     res.json({
-       status: false,
-       message: 'Nama tidak boleh kosong'
-     })
-     res.sendStatus(400)
-   }
-
-   if(email == undefined){
-     res.json({
-       status: false,
-       message: 'Email tidak boleh kosong'
-     })
-       res.sendStatus(400)
-   }
-
-   else{
-      users.push(req.body);
+      users.push({
+          id,
+          name,
+          email
+      });
 
       res.json({
         status: true,
@@ -38,13 +25,12 @@ const create = (req, res) => {
         data: users,
         method: req.method,
         url: req.url
-      });
+      })
       res.sendStatus(200)
-    }
 }
 
 //handler method get pada url users
-const readAll = (req, res, next) => {
+const readAll = (req, res) => {
     res.render('pages/users/index', {users})
 //res.render('pages/users/index', {users})
 };
@@ -58,7 +44,7 @@ const readById = (req, res) => {
        status: false,
        message: `user dengan id ${id} tidak ditemukan`
      })
-     res.sendStatus(404)
+     //res.sendStatus(404)
    }
    else{
      res.json({
@@ -129,5 +115,5 @@ const deleteById = (req, res) => {
 }
 
 module.exports = {
-  create, readAll, readById, updateById, deleteById
+  register, create, readAll, readById, updateById, deleteById
 };
