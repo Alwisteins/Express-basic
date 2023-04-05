@@ -1,4 +1,4 @@
-let users = [
+export let users = [
   {
   id: 1,
   name: "alwi wahyu",
@@ -14,5 +14,3 @@ let users = [
    name: "ishigami senku",
    nickname: "Dr. Stone"
  }];
-
-module.exports = { users };

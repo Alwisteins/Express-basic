@@ -1,28 +1,29 @@
-const express = require('express');
-const router = express.Router();
-const {
+import { Router } from 'express';
+import {
   register,
   create,
   readAll, 
   readById, 
   updateById, 
   deleteById 
-  } = require('../controller/users-handler.js');
+} from '../controller';
+
+const routes = Router();
   
 //register page
-router.route('/users/register')
+routes.route('/users/register')
   .get(register)
   .post(create);
 
 //route group
-router.route('/users')
+routes.route('/users')
  .get(readAll)
  .post(create);
 
 //route parameter
-router.route('/users/:id')
+routes.route('/users/:id')
  .get(readById)
  .put(updateById)
  .delete(deleteById);
 
-module.exports = router;
+export { routes };

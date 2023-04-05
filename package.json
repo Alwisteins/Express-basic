@@ -1,0 +1,33 @@
+{
+  "name": "express-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alwisteins/Express-basic.git"
+  },
+  "author": "Alwisteins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alwisteins/Express-basic/issues"
+  },
+  "homepage": "https://github.com/Alwisteins/Express-basic#readme",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.3"
+  }
+}
